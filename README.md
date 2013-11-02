@@ -17,3 +17,20 @@ You can also use this with the ```<video>``` and ```<audio>``` tags.
 ```
 <video src="http://localhost:4000/0011aee4e21d4b84aecc342960eb876a.mp4" controls />
 ```
+
+Installation
+---------------------------------
+
+You can install this module using NPM.
+
+```
+npm install -g limelight_proxy
+```
+
+Usage
+----------------------------------
+To run the proxy on your server or computer, you can run with the following parameters.
+
+```
+limelight_proxy --organization 12345678 --secret abcd1234 --access_key zyx987 --port 4000
+```

@@ -10,6 +10,9 @@
   "bugs": {
     "url": "http://github.com/travist/limelight_proxy/issues"
   },
+  "bin": {
+    "limelight_proxy": "./bin/limelight_proxy"
+  },
   "main": "proxy.js",
   "dependencies": {
     "needle": ">=0",
