@@ -5,7 +5,7 @@ This is a node.js application that serves as a media proxy for Limelight CDN.  T
 the following URL and maps it to the actual media download.
 
 ```
-http://localhost:4000/0011aee4e21d4b84aecc342960eb876a.mp4
+http://localhost:4000/0011aee4e21d4b84aecc342960eb876a
 ```
 
 Where ```0011aee4e21d4b84aecc342960eb876a``` is the Limelight CDN media ID.  When this application
@@ -15,7 +15,7 @@ from Limelight CDN.
 You can also use this with the ```<video>``` and ```<audio>``` tags.
 
 ```
-<video src="http://localhost:4000/0011aee4e21d4b84aecc342960eb876a.mp4" controls />
+<video src="http://localhost:4000/0011aee4e21d4b84aecc342960eb876a" controls />
 ```
 
 Installation
