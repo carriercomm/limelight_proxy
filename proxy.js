@@ -85,10 +85,37 @@ http.createServer(function (req, res) {
 
           // Get the download url for this media.
           var downloadRequest = authenticate_request("POST", base + mediaId + '/download_url');
-          needle.post(downloadRequest, {quality: 'hd'}, function(error, response, downloadURL) {
 
-            // Pipe this media to the response.
-            request.get(downloadURL).pipe(res);
+          // The download qualities.
+          var qualities = ['hd', 'high', 'medium', 'low'];
+
+          // Get the best downloadable media.
+          var getDownload = function(callback, qIndex) {
+            qIndex = qIndex ? qIndex : 0;
+            if (qIndex < qualities.length) {
+              needle.post(downloadRequest, {quality: qualities[qIndex]}, function(error, response, downloadURL) {
+                if ((typeof downloadURL == 'object') && downloadURL.hasOwnProperty('errors')) {
+                  getDownload(callback, ++qIndex);
+                }
+                else {
+                  callback(downloadURL);
+                }
+              });
+            }
+            else {
+              callback(null);
+            }
+          };
+
+          // Get the best download for this media.
+          getDownload(function(download) {
+            if (download) {
+              request.get(download).pipe(res);
+            }
+            else {
+              res.writeHead(404, {'Content-Type': 'text/plain'});
+              res.end('Media download not available');
+            }
           });
         }
         else if (info.media_type == 'Audio') {
