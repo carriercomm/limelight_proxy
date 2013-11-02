@@ -134,7 +134,7 @@ http.createServer(function (req, res) {
       }
       else {
         console.log(info);
-        res.writeHead(response.statusCode, {'Content-Type': 'text/plain'});
+        res.writeHead(response ? response.statusCode : 500, {'Content-Type': 'text/plain'});
         res.end(info);
       }
     });
