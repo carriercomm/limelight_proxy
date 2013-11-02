@@ -24,7 +24,7 @@ Installation
 You can install this module using NPM.
 
 ```
-npm install -g limelight_proxy
+sudo npm install -g limelight_proxy
 ```
 
 Usage
