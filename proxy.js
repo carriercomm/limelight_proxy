@@ -110,11 +110,11 @@ http.createServer(function (req, res) {
           // Get the best download for this media.
           getDownload(function(download) {
             if (download) {
-              console.log('Piping ' + info.id + ': ' + download);
+              console.log('Piping ' + mediaId + ': ' + download);
               request.get(download).pipe(res);
             }
             else {
-              console.log('Media download not found for ' + info.id);
+              console.log('Media download not found for ' + mediaId);
               res.writeHead(404, {'Content-Type': 'text/plain'});
               res.end('Media download not available');
             }
@@ -123,11 +123,11 @@ http.createServer(function (req, res) {
         else if (info.media_type == 'Audio') {
 
           // For audio, pipe the media url to the response.
-          console.log('Piping ' + info.id + ': ' + largest.url);
+          console.log('Piping ' + mediaId + ': ' + largest.url);
           request.get(largest.url).pipe(res);
         }
         else {
-          console.log('Unknown media type for ' + info.id);
+          console.log('Unknown media type for ' + mediaId);
           res.writeHead(400, {'Content-Type': 'text/plain'});
           res.end('Unknown media type.');
         }
