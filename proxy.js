@@ -94,7 +94,7 @@ http.createServer(function (req, res) {
         else if (info.media_type == 'Audio') {
 
           // For audio, pipe the media url to the response.
-          request.get(info.url).pipe(res);
+          request.get(largest.url).pipe(res);
         }
         else {
           res.writeHead(400, {'Content-Type': 'text/plain'});
