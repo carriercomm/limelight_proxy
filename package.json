@@ -1,7 +1,7 @@
 {
   "name": "limelight_proxy",
   "description": "A proxy for delivering Limelight media.",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "author": "Travis Tidwell <travist349@gmail.com>",
   "repository": {
     "type": "git",
