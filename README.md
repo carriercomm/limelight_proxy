@@ -34,3 +34,13 @@ To run the proxy on your server or computer, you can run with the following para
 ```
 limelight_proxy --organization 12345678 --secret abcd1234 --access_key zyx987 --port 4000
 ```
+
+Pipe vs. Redirect
+-----------------------------------
+This library allows you to either retrieve your media via http pipe, or via redirect.  By default,
+it will pipe the remote file to the request.  However, you can change this to use a redirect by
+using the ```redirect``` parameter as follows.
+
+```
+limelight_proxy --organization 12345678 --secret abcd1234 --access_key zyx987 --port 4000 --redirect 1
+```
