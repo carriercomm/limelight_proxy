@@ -121,6 +121,7 @@ http.createServer(function (req, res) {
             getDownload(function(download) {
               if (download) {
                 if (nconf.get('redirect')) {
+                  console.log('Redirecting to ' + mediaId + ': ' + download);
                   res.writeHead(302, {'Location': download});
                   res.end();
                 }
@@ -138,6 +139,7 @@ http.createServer(function (req, res) {
           }
           else if (info.media_type == 'Audio') {
             if (nconf.get('redirect')) {
+              console.log('Redirecting to ' + mediaId + ': ' + largest.url);
               res.writeHead(302, {'Location': largest.url});
               res.end();
             }
