@@ -1,7 +1,7 @@
 {
   "name": "limelight_proxy",
   "description": "A proxy for delivering Limelight media.",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "author": "Travis Tidwell <travist349@gmail.com>",
   "repository": {
     "type": "git",
@@ -16,9 +16,9 @@
   "main": "proxy.js",
   "dependencies": {
     "needle": ">=0",
-    "crypto": ">=0",
     "underscore": ">=0",
     "request": ">=0",
-    "nconf": ">=0"
+    "nconf": ">=0",
+    "limelight": ">=0"
   }
 }
